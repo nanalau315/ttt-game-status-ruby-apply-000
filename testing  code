@@ -1,0 +1,27 @@
+def won?(board)
+winner = []
+empty_board = board.all? {|x| x == " "}
+WIN_COMBINATIONS.each do |sub_array|
+    if empty_board || full?(board)
+      return false
+    elsif sub_array.all? { |value| board[value] =="X" } || sub_array.all? { |value| board[value] =="O" }
+      winner = sub_array
+    end
+  end
+  winner
+end
+
+
+def won?(board)
+  all_match = []
+  empty_board = board.all? {|x| x == " "}
+  WIN_COMBINATIONS.each do |win_combo|
+  if empty_board || full?(board)
+    return false
+  elsif  win_combo.all? do |win_index| 
+    board[win_index] == "X" || board[win_index] == "O" 
+  all_match = win_combo
+  end
+  all_match
+  end 
+end
