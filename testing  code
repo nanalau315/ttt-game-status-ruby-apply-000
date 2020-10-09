@@ -11,17 +11,23 @@ WIN_COMBINATIONS.each do |sub_array|
   winner
 end
 
-
 def won?(board)
   all_match = []
-  empty_board = board.all? {|x| x == " "}
+  empty_board = board.all?{|slot|slot == " "}
   WIN_COMBINATIONS.each do |win_combo|
+  
   if empty_board || full?(board)
     return false
-  elsif  win_combo.all? do |win_index| 
-    board[win_index] == "X" || board[win_index] == "O" 
-  all_match = win_combo
-  end
-  all_match
-  end 
+    
+  elsif win_combo.all? do |win_index| 
+    board[win_index] =="X"||board[win_index] =="O" 
+    all_match = win_combo
+    
+      all_match
+      end
+      
+      end
+      
+     end
+     
 end
